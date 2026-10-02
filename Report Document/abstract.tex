@@ -1,0 +1,13 @@
+%\thispagestyle{empty}
+\begin{center}
+\textbf{\Large{\section*{Abstract}}}
+\end{center}
+\addcontentsline{toc}{chapter}{Abstract}{}
+
+In modern academic environments, students and faculty often face challenges in accessing unstructured course information, such as syllabus details, attendance guidelines, exam strategies, and question banks. Traditional communication channels like messaging groups or static notice boards are fragmented, leading to confusion and delayed information retrieval.
+
+To address this issue, we developed \textbf{Chimera AI}, a web-based multi-agent academic intelligence platform. Built as part of our Front End Development Lab (FEDL) mini project, Chimera AI provides a single interface where users can ask questions and receive dynamic, context-aware answers. The frontend is developed using React 19, Vite, and Tailwind CSS v4, providing an interactive dashboard with smooth UI animations and responsive pages.
+
+Under the hood, the platform utilizes a multi-agent backend powered by LangGraph and FastAPI. An automated supervisor router dynamically evaluates incoming user queries and delegates execution to domain-specific agents: a Syllabus Tutor Agent, a University Policy Agent, and an Exam Strategist Agent. To ensure speed and accuracy, the system integrates Pinecone vector retrieval (RAG), Server-Sent Events (SSE) for token streaming, semantic caching, and local TF-IDF fallback capabilities.
+
+This report covers the design, frontend components, backend integration, user interface screens, and overall workflow of Chimera AI. The system successfully demonstrates how modern web interfaces combined with intelligent multi-agent routing can solve everyday information gaps on college campuses.

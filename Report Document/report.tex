@@ -1,0 +1,48 @@
+\documentclass[11pt,a4paper]{report}
+\usepackage[a4paper,left=20mm,right=20mm,top=20mm,bottom=20mm,footskip=8mm]{geometry}
+\usepackage{graphicx}
+\usepackage{ragged2e}
+\usepackage{setspace}
+\usepackage{csquotes}
+\usepackage{hyperref}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    filecolor=black,
+    urlcolor=blue,
+    citecolor=black
+}
+
+\setstretch{1.1}
+
+\AtBeginDocument{\renewcommand{\bibname}{References}}
+
+\begin{document}
+
+\pagestyle{plain}
+\input{firstpage}
+
+\input{declaration}
+
+\pagenumbering{roman}
+\input{abstract}
+
+\tableofcontents
+\listoffigures
+
+\clearpage
+\pagestyle{plain}
+
+\pagenumbering{arabic}
+\input{chapter1}
+\input{chapter2}
+\input{chapter3}
+\input{chapter4}
+\input{chapter5}
+\input{chapter6}
+
+\input{references}
+\input{acknowledgment}
+
+\end{document}
