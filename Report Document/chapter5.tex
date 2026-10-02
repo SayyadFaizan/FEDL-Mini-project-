@@ -1,19 +1,19 @@
-\section{Results and Performance Discussion}
+\chapter{Results and Performance Discussion}
 
 The Chimera AI platform was evaluated across multiple user scenarios to test frontend responsiveness, backend routing accuracy, and token streaming performance.
 
-\subsection{System Performance and User Testing}
+\section{System Performance and User Testing}
 
-\subsubsection{1. Front-End Responsiveness and Load Times}
+\subsection{1. Front-End Responsiveness and Load Times}
 By utilizing React 19 alongside Vite, initial application build sizes were kept minimal. The application achieves near-instant page transitions across route pages (\texttt{/}, \texttt{/chat}, \texttt{/ingest}, \texttt{/telemetry}). Tailwind CSS v4 utility classes ensured consistent layout rendering on desktop and mobile browsers without rendering delays.
 
-\subsubsection{2. Streaming Latency and SSE Efficiency}
+\subsection{2. Streaming Latency and SSE Efficiency}
 Traditional HTTP request-response setups require the user to wait several seconds while an LLM generates a complete response. By implementing Server-Sent Events (SSE), the initial token delivery time (Time-To-First-Token) was reduced to under 400 milliseconds. Users receive immediate visual feedback as tokens stream in real time.
 
-\subsubsection{3. Semantic Cache and Circuit Breaker Reliability}
+\subsection{3. Semantic Cache and Circuit Breaker Reliability}
 To test performance under high load, repetitive queries were submitted to the chat console. The backend semantic cache successfully intercepted identical and highly similar prompts (cosine similarity $\ge 0.92$), returning instant answers without triggering external LLM API calls. Additionally, when vector database connection limits were simulated, the local TF-IDF fallback ensured continuous service availability.
 
-\subsection{Impact on Campus Learning}
+\section{Impact on Campus Learning}
 The deployment of Chimera AI demonstrates clear benefits for academic environments:
 \begin{itemize}
     \item \textbf{Reduced Search Time:} Students spend less time searching through unstructured syllabus PDFs or waiting for faculty replies regarding routine academic guidelines.

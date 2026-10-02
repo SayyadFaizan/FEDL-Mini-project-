@@ -1,5 +1,5 @@
-\documentclass[11pt,a4paper]{report}
-\usepackage[a4paper,left=20mm,right=20mm,top=20mm,bottom=20mm,footskip=8mm]{geometry}
+\documentclass[12pt,a4paper]{report}
+\usepackage[a4paper,left=20mm,right=20mm,top=25mm,bottom=25mm,footskip=10mm]{geometry}
 \usepackage{graphicx}
 \usepackage{ragged2e}
 \usepackage{setspace}
@@ -14,35 +14,54 @@
     citecolor=black
 }
 
-\setstretch{1.1}
+\setstretch{1.2}
 
 \AtBeginDocument{\renewcommand{\bibname}{References}}
 
 \begin{document}
 
 \pagestyle{plain}
-\input{firstpage}
+\include{firstpage}
 
-\input{declaration}
+\clearpage
+\pagestyle{plain}
+\include{declaration}
 
+\clearpage
 \pagenumbering{roman}
-\input{abstract}
+\include{abstract}
 
+\clearpage
 \tableofcontents
+
+\clearpage
 \listoffigures
 
 \clearpage
 \pagestyle{plain}
-
 \pagenumbering{arabic}
-\input{chapter1}
-\input{chapter2}
-\input{chapter3}
-\input{chapter4}
-\input{chapter5}
-\input{chapter6}
 
-\input{references}
-\input{acknowledgment}
+\include{chapter1}
+
+\clearpage
+\include{chapter2}
+
+\clearpage
+\include{chapter3}
+
+\clearpage
+\include{chapter4}
+
+\clearpage
+\include{chapter5}
+
+\clearpage
+\include{chapter6}
+
+\clearpage
+\include{references}
+
+\clearpage
+\include{acknowledgment}
 
 \end{document}
