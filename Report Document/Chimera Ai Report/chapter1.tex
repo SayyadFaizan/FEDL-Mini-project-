@@ -1,0 +1,27 @@
+\chapter{Introduction}
+
+In modern educational institutions, students and faculty handle a vast amount of academic information every day. This includes lecture notes, syllabus frameworks, university guidelines, exam schedules, grading schemes, and practice question paper banks. Despite the availability of digital tools, most of this data remains scattered across physical notice boards, isolated PDF files, and informal social media messaging groups.
+
+As a result, students frequently struggle to find accurate answers to basic questions such as attendance rules, topic weightages for upcoming exams, or specific explanations of complex syllabus concepts. To solve this problem, we created \textbf{Chimera AI} as our Front End Development Lab (FEDL) mini project. The application has been deployed live for public testing and access at \url{https://chimera-ai-vpcq.vercel.app/}.
+
+\section{Problem Statement}
+In typical college environments, information sharing suffers from several bottlenecks:
+\begin{itemize}
+    \item \textbf{Fragmented Resources:} Syllabus documents, exam preparation guidelines, and institutional rules are stored in separate formats and locations, requiring manual searching.
+    \item \textbf{Slow Response Times:} Asking teachers or administrative staff about routine policy questions takes time and leads to repeated queries for faculty.
+    \item \textbf{Lack of Real-Time Guidance:} Traditional web portals lack interactive chat features and real-time visual tracking of information processing.
+    \item \textbf{Monolithic Chatbot Limitations:} Generic single-model chatbots often hallucinate or fail when asked specialized academic questions that require precise document context.
+\end{itemize}
+
+\section{Objectives of the Project}
+The main goals of the Chimera AI mini project are as follows:
+\begin{enumerate}
+    \item To design a clean, responsive, and modern user interface using React 19, Vite, and Tailwind CSS v4.
+    \item To implement multi-page navigation including a landing home page, interactive chat console, document ingestion portal, telemetry pipeline screen, and user login page.
+    \item To integrate real-time Server-Sent Events (SSE) streaming so that answers appear character-by-character along with status telemetry badges.
+    \item To connect the frontend with a Python FastAPI backend powered by LangGraph multi-agent decision routing and Pinecone vector database search.
+    \item To deploy the application onto Vercel (\url{https://chimera-ai-vpcq.vercel.app/}) and optimize performance using semantic caching and fallback mechanisms.
+\end{enumerate}
+
+\section{Scope of the Report}
+This project report details the design and implementation of Chimera AI. It covers the literature context, technical stack, frontend design choices, backend architecture, interactive UI modules with screenshots, system performance evaluation, and potential directions for future work.

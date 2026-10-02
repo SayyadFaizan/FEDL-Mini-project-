@@ -1,0 +1,30 @@
+\chapter{System Architecture and Methodology}
+
+Chimera AI follows a three-tier software architecture consisting of the React 19 Frontend Client, Express API Gateway, and FastAPI LangGraph Backend. 
+
+\section{System Architecture}
+The application workflow begins when a student or faculty member enters a query on the frontend chat console. The query is forwarded through the Express gateway to the FastAPI service. Before invoking full language models, the backend checks a semantic cache using vector cosine similarity. If a similar question was previously answered, the cached answer is returned immediately. Otherwise, the query passes to the LangGraph supervisor router, which assigns the task to one of three specialized agents:
+\begin{enumerate}
+    \item \textbf{Syllabus Tutor Agent:} Answers technical concept queries by searching through indexed PDF course materials stored in Pinecone.
+    \item \textbf{Policy Agent:} Resolves administrative queries regarding university rules, grading structures, and attendance requirements.
+    \item \textbf{Exam Strategist Agent:} Assists students with study schedules, topic weightage breakdowns, and question bank preparation.
+\end{enumerate}
+
+\section{Methodology}
+The project was developed following an iterative engineering approach to ensure modularity and ease of maintenance.
+
+\subsection{1. Front-End Design and Component Structure}
+The front-end design focuses on clean layout organization and accessibility. The navigation bar provides direct links to the main pages: Home (\texttt{/}), Login (\texttt{/login}), Chat (\texttt{/chat}), Ingest (\texttt{/ingest}), and Telemetry (\texttt{/telemetry}). Color tokens are configured in CSS variables to ensure visual consistency:
+\begin{itemize}
+    \item \textbf{Primary Accent:} Dark Slate (\texttt{\#333D4E})
+    \item \textbf{Card Surface:} Clean White (\texttt{\#FFFFFF})
+    \item \textbf{Bright Accent:} Sky Azure (\texttt{\#5B9EE1})
+    \item \textbf{Background:} Soft Light Sky (\texttt{\#DCE8F6})
+\end{itemize}
+
+\subsection{2. Real-Time Server-Sent Events (SSE) Protocol}
+Instead of waiting for a complete JSON response from the server, Chimera AI utilizes Server-Sent Events over HTTP. As the backend LLM generates tokens, individual characters are streamed back to the client in real time. The stream also sends status updates (e.g., "Swarm engaging Syllabus Tutor..."), which update the telemetry badges dynamically on the chat interface.
+
+\subsection{3. Vector Data Ingestion Pipeline}
+To allow custom syllabus and question bank uploads, the platform includes a document ingestion engine. Uploaded PDF files are parsed using PyPDF, split into semantic text chunks, embedded using HuggingFace models, and saved under dedicated namespaces in Pinecone. For offline reliability, a local TF-IDF index acts as a backup search mechanism.
+

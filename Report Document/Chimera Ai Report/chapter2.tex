@@ -1,0 +1,28 @@
+\chapter{Literature Survey and Technology Stack}
+
+In recent years, web application development and artificial intelligence have progressed rapidly. Standard web portals have evolved from static HTML/CSS pages into highly dynamic Single Page Applications (SPAs). In academic settings, digital assistants have evolved from simple keyword-based FAQ bots into context-aware systems using Retrieval-Augmented Generation (RAG).
+
+\section{Literature Survey}
+
+\subsection{Evolution of Front-End Frameworks}
+Modern web development demands fast rendering, modular components, and seamless state management. Frameworks like React have become industry standards due to their virtual DOM reconciliation and component-driven structure. With the release of React 19 and Vite 8, build tools now provide instant hot-module replacement (HMR), reducing bundle sizes and improving loading speed. Tailwind CSS v4 further simplifies styling by offering utility-first classes and CSS variables, allowing developers to create consistent themes without writing heavy external CSS files.
+
+\subsection{Multi-Agent Systems in AI}
+Traditional AI assistants rely on a single large language model (LLM) prompt to answer all types of queries. However, a single prompt often struggles when switched between creative explanations, strict administrative policy lookups, and technical data extraction. Recent research shows that dividing tasks among a swarm of specialized agents---directed by a central supervisor node---improves retrieval accuracy and reduces incorrect responses. Frameworks like LangGraph allow developers to model agent workflows as directed state graphs, enabling structured decision-making.
+
+\section{Technology Stack}
+The Chimera AI platform uses a modern tech stack divided cleanly between front-end user experience and back-end processing.
+
+\subsection{Front-End Technologies}
+\begin{itemize}
+    \item \textbf{React 19 \& Vite 8:} Serves as the core front-end framework and lightning-fast bundler for rendering dynamic UI components.
+    \item \textbf{Tailwind CSS v4:} Used for layout styling, custom color variables, flexbox/grid alignments, and responsive mobile-first styling.
+    \item \textbf{Framer Motion:} Enables clean UI transitions, card hover effects, and smooth page navigation animations.
+    \item \textbf{Lucide React Icons \& 21st.dev Components:} Provides UI icons and modern design elements like spotlight cursor cards and glowing ambient backgrounds.
+\end{itemize}
+
+\subsection{Back-End Technologies}
+\begin{itemize}
+    \item \textbf{FastAPI (Python):} Asynchronous web framework for handling REST API requests and Server-Sent Events (SSE) token streams.
+    \item \textbf{Express API Gateway (Node.js):} Acts as an intermediate gateway running on Port 3000 to manage routing, CORS headers, and client request proxies.
+\end{itemize}
